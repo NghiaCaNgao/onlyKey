@@ -1,0 +1,50 @@
+{
+    "manifest_version": 3,
+    "name": "Only Key",
+    "short_name": "OnlyKey",
+    "version": "0.0.1",
+    "default_locale": "en",
+    "description": "Use keyboard instead of mouse",
+    "author": "nghiacangao",
+    "icons": {
+        "16": "./assets/logo/16x.png",
+        "48": "./assets/logo/48x.png",
+        "128": "./assets/logo/128x.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "images/icon16.png",
+            "24": "images/icon24.png",
+            "32": "images/icon32.png"
+        },
+        "default_title": "Only Key",
+        "default_popup": "./popup/popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content-script.js"
+            ]
+        }
+    ],
+    "homepage_url": "https://path/to/homepage",
+    "omnibox": {
+        "keyword": "onlykey"
+    },
+    "optional_permissions": [
+        "tabs"
+    ],
+    "options_page": "options.html",
+    "options_ui": {
+        "page": "options.html"
+    },
+    "permissions": [
+        "tabs"
+    ]
+}
